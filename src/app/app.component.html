@@ -1,0 +1,15 @@
+<div>
+<h1>Seat Reservation System</h1>
+<label>Enter number of seats to book:</label>
+<input type="number" #seatInput>
+<button (click)="bookSeats(seatInput.value)">Book Seats</button>
+
+<h2>Seat Availability:</h2>
+<table>
+  <tr *ngFor="let row of coach">
+    <td *ngFor="let seat of row" [ngClass]="{'booked': seat.booked}">
+      {{ seat.row }}-{{ seat.seat }}
+    </td>
+  </tr>
+</table>
+</div>
